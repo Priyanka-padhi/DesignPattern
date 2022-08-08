@@ -1,6 +1,6 @@
 package FactoryMethodPattern;
 
-public class AbstractDocument {
+public abstract class AbstractDocument {
 protected static Document createdoc(String doc){
       switch(doc){
           case "zip":
