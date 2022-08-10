@@ -1,7 +1,7 @@
 package AirlinesFactoryMethod;
 
 public interface Flight {
-    AirbusInterface selectAirbusFlight(flightType ft);
-    BoeingInterface selectBoeingFlight(flightType ft);
+    AirbusInterface selectAirbusFlight(flightType ft) throws NullException;
+    BoeingInterface selectBoeingFlight(flightType ft) throws NullException;
 
 }

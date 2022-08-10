@@ -1,17 +1,21 @@
 package AirlinesFactoryMethod;
 
-public class Airbus implements Flight{
+public class Airbus implements Flight {
 
     @Override
-    public AirbusInterface selectAirbusFlight(flightType ft) {
-       switch (ft){
-           case DOMESTIC:
-               return  new DomesticAirbus();
-           case INTERNATIONAL:
-               return  new InternationalAirbus();
-       }
+    public AirbusInterface selectAirbusFlight(flightType ft) throws NullException {
 
-       return null;
+            switch (ft) {
+                case DOMESTIC:
+                    return new DomesticAirbus();
+                case INTERNATIONAL:
+                    return new InternationalAirbus();
+            }
+
+
+            throw new NullException("Null");
+
+       //return null;
     }
 
     @Override

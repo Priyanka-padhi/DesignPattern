@@ -6,7 +6,7 @@ public class DomesticAirbus implements AirbusInterface {
 
 
     int totalSeat;
-    public ArrayList<Integer> AvailableSeats = new ArrayList<Integer>();
+    public ArrayList<Integer> AvailableSeats = new ArrayList<Integer>(totalSeat);
 
 
     @Override
@@ -16,20 +16,28 @@ public class DomesticAirbus implements AirbusInterface {
 
     @Override
     public ArrayList<Integer> getAvailableSeats() {
-        for (Integer i = 1; i <= totalSeat; i++) {
-            this.AvailableSeats.add(i);
-
-        }
+//        for (Integer i = 1; i <= totalSeat; i++) {
+//            this.AvailableSeats.add(i);
+//
+//        }
         System.out.println("Available Seats" +AvailableSeats);
         return AvailableSeats;
     }
 
     @Override
-    public int getTotalSeat(int totalSeat) {
+    public int getTotalSeat() {
         return totalSeat;
     }
 
     public void setTotalSeat(int totalSeat) {
+
+
         this.totalSeat = totalSeat;
+        for (int i = 1; i <= totalSeat; i++) {
+            this.AvailableSeats.add(i);
+        }
+        System.out.println("Available Seats:"+AvailableSeats);
+
+
     }
 }
